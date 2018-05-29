@@ -1,19 +1,17 @@
-# -*- coding = utf-8
+# -*- coding: utf-8 -*-
+# Create your models here.
+from __future__ import unicode_literals
 from django.db import models
 
 
 class UserInfo(models.Model):
-    # 用户名
     uname = models.CharField(max_length=20)
-    # 密码
-    upwd = models.CharField(max_length=10)
-    # 邮箱
+    upwd = models.CharField(max_length=40)
     uemail = models.CharField(max_length=30)
-    # 收货人
-    utaker = models.CharField(max_length=20, default='')
-    # 邮寄地址
+    ushou = models.CharField(max_length=20, default='')
     uaddress = models.CharField(max_length=100, default='')
-    # 邮编
-    uzipcode = models.CharField(max_length=6, default='')
-    # 电话
+    uyoubian = models.CharField(max_length=6, default='')
     uphone = models.CharField(max_length=11, default='')
+    #default blank 不需要更新数据库
+
+

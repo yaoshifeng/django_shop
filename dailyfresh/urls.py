@@ -13,10 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.conf.urls import url, include
+from django.contrib import admin
+# from df_goods import search_views
+
+#看完
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^user/', include('df_user.urls'))
+    url(r'^user/', include('df_user.urls')),
+    url(r'^cart/', include('df_cart.urls')),
+    url(r'^goods/', include('df_goods.urls')),
+    url(r'^order/', include('df_order.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^', include('df_goods.urls', namespace='goods')),
+    #url(r'^search/', search_views.MySeachView(), name='haystack_search'),
 ]

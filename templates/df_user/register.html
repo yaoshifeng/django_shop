@@ -1,26 +1,26 @@
 {% extends 'base_foot.html' %}
-{% load staticfiles %}
-{% block title %}天天生鲜-注册{% endblock title %}
+{% load static from staticfiles %}
 {% block head %}
-    <script type="text/javascript" src="{% static 'js/register.js' %}"></script>
+<script type="text/javascript" src="{% static  'js/register.js' %}"></script>
+
 {% endblock head %}
 
-{% block body %}
-    <div class="register_con">
-        <div class="l_con fl">
-            <a class="reg_logo"><img src="{% static 'images/logo02.png' %}"></a>
-            <div class="reg_slogan">足不出户 新鲜每一天</div>
-            <div class="reg_banner"></div>
-        </div>
 
-        <div class="r_con fr">
-            <div class="reg_title clearfix">
-                <h1>用户注册</h1>
-                <a href="#">登录</a>
-            </div>
-            <div class="reg_form clearfix">
-                <form action="/user/register" method="post">
-                    <!-- 表单都添加csrf_token 方式csrf攻击 -->
+{% block body %}
+	<div class="register_con">
+		<div class="l_con fl">
+			<a class="reg_logo"><img src="/static/images/logo02.png"></a>
+			<div class="reg_slogan">足不出户  ·  新鲜每一天</div>
+			<div class="reg_banner"></div>
+		</div>
+
+		<div class="r_con fr">
+			<div class="reg_title clearfix">
+				<h1>用户注册</h1>
+				<a href="/user/login/">登录</a>
+			</div>
+			<div class="reg_form clearfix">
+				<form action="/user/register_handle/" id="reg_form" method="post">
                     {% csrf_token %}
                     <ul>
                         <li>
@@ -49,14 +49,14 @@
                             <span class="error_tip2">提示信息</span>
                         </li>
                         <li class="reg_sub">
-                            <input type="submit" value="注 册">
+                            <input  type="submit" value="注 册" name="">
+{#                            <button type="submit" value="注 册"></button>#}
                         </li>
                     </ul>
-                </form>
-                {{ errmsg }}
-            </div>
+				</form>
+			</div>
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 {% endblock body %}

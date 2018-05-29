@@ -1,2 +1,0 @@
-# dailyfresh
-django project
