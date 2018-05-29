@@ -1,1 +1,2 @@
-# django_shop
+# dailyfresh
+django project
